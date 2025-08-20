@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+}
+
+
+
+/* Tjänster-sida */
+.services-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #f0f4f8; /* Ljusgrå bakgrund */
+    margin-block: 30px;
+}
+
+.services-page h1 {
+    font-size: 3rem;
+    color: #283e51; /* Mörkblå */
+    margin-bottom: 1.5rem;
+}
+
+.services-page .intro {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+/* Tjänster-korten */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.service-card {
+    width: 30%;
+    padding: 1.5rem;
+    background: white;
+    border: 2px solid #cfdef3; /* Ljusblå border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.service-card h2 {
+    font-size: 1.8rem;
+    color: #283e51;
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .service-card {
+        width: 90%;
+    }
+}

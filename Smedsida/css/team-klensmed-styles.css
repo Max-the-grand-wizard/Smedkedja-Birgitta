@@ -1,0 +1,164 @@
+body {
+    background-color: #fff9e6;
+    margin: 0;
+}
+
+
+
+.personal-page {
+    background-color: inherit; 
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.personal-page h1 {
+    font-size: 3rem;
+    color: #283e51; 
+    margin-bottom: 2rem;
+}
+
+/* Container */
+.staff-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; 
+}
+
+.staff-card {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    padding: 2rem;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3); 
+    border: 25px solid transparent; 
+    border-image: linear-gradient(135deg, #283e51, #4b79a1) 1; 
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px; 
+    gap: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.staff-card.left {
+    align-self: flex-start; 
+}
+
+.staff-card.right {
+    align-self: flex-end; 
+    flex-direction: row-reverse; 
+}
+
+
+.staff-card:hover {
+    transform: translateY(-5px); 
+    transform: rotate(1deg) translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); 
+}
+
+.staff-card img {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+.staff-info {
+    text-align: left;
+}
+
+.staff-info h2 {
+    font-size: 2rem; 
+    color: #283e51; 
+    margin-bottom: 0.5rem;
+}
+
+.staff-info p {
+    font-size: 1.3rem; 
+    color: #555; 
+    line-height: 1.8; 
+}
+
+/* Skämt i kortet */
+.staff-info .joke {
+    margin-top: 1rem;
+    font-style: italic; /* Gör texten lekfull */
+    color: #444; /* Mörkare grå */
+    background: #f9f9f9; /* Lätt grå bakgrund */
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #283e51; /* Vertikal linje som dekoration */
+    border-radius: 5px; /* Rundade hörn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtil skugga */
+}
+
+/* Knapp i kortet */
+.staff-info .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #283e51; /* Mörkblå */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.staff-info .btn:hover {
+    background-color: #4b79a1; /* Ljusare blå vid hover */
+}
+/* Tooltip styling */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer; /* Gör namnet klickbart */
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip); /* Hämta texten från data-tooltip */
+    position: absolute;
+    top: -150%; /* Placera ovanför namnet */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #283e51; /* Mörkblå bakgrund */
+    color: #ffd700; /* Guldgul */
+    padding: 0.5rem 1rem; /* Inre marginaler */
+    border-radius: 5px; /* Mjuka hörn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtil skugga */
+    white-space: nowrap; /* Förhindra radbrytning */
+    opacity: 0; /* Gör osynlig som standard */
+    pointer-events: none; /* Förhindrar interaktion */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* Mjuk animation */
+    z-index: 10;
+
+    /* Fonten Dancing Script */
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem; /* Lagom storlek för tooltip-texten */
+}
+[data-tooltip]:hover::after {
+    opacity: 1; /* Gör synlig vid hover */
+    transform: translateX(-50%) translateY(-5px); /* Flytta upp tooltip lite */
+}
+
+
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .staff-card {
+        flex-direction: column; /* Vertikal layout för små skärmar */
+        width: 90%; /* Mindre bredd */
+        padding: 1.5rem; /* Mindre padding */
+    }
+
+    .staff-info {
+        text-align: center; /* Centrerad text på små skärmar */
+    }
+
+    .staff-card img {
+        margin: 0 0 1rem 0; /* Justera marginalerna för bilden */
+    }
+
+    .staff-card.left, .staff-card.right {
+        align-self: center; /* Centrera korten på små skärmar */
+    }
+}
